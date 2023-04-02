@@ -1,0 +1,21 @@
+{
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  },
+  "name": "forkify",
+  "version": "1.0.0",
+  "default": "index.html",
+  "dependencies": {
+    "core-js": "^3.29.1",
+    "fracty": "^1.0.11"
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Mengxuan",
+  "license": "ISC",
+  "description": ""
+}
