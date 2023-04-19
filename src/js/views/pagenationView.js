@@ -12,53 +12,53 @@ class PageView extends View {
     //console.log(curPage);
 
     //when on page 1 and there are other pages
-    if (curPage === 1 && pageNum > 1)
-      return `<p class="page--current">
-      <span>${curPage}</span>
-    </p>
+    if (curPage === 1 && pageNum > 1) return;
+    `<p class="page--current">
+        <span>${curPage}</span>
+      </p>
       <button data-goto='${
         curPage + 1
       }' class="btn--inline  pagination__btn--next">
-    <span>Page ${curPage + 1}</span>
-    <svg class="search__icon">
-      <use href="${icons}#icon-arrow-right"></use>
-    </svg>
-  </button>`;
+        <span>Page ${curPage + 1}</span>
+        <svg class="search__icon">
+          <use href="${icons}#icon-arrow-right"></use>
+        </svg>
+      </button>`;
     //when on other pages
-    if (curPage < pageNum) {
-      return `<button data-goto='${
-        curPage + 1
-      }' class="btn--inline  pagination__btn--next">
-      <span>Page ${curPage + 1}</span>
-      <svg class="search__icon">
-        <use href="${icons}#icon-arrow-right"></use>
-      </svg>
-    </button>
-    <p class="page--current">
-      <span>${curPage}</span>
-    </p>
-    <button data-goto='${
-      curPage - 1
-    }' class="btn--inline  pagination__btn--prev">
-    <svg class="search__icon">
-      <use href="${icons}#icon-arrow-left"></use>
-    </svg>
-    <span>Page ${curPage - 1}</span>
-  </button>`;
-    }
-    //when on last page
-    if (curPage === pageNum && pageNum > 1)
-      return `<p class="page--current">
-      <span>${curPage}</span>
-    </p>
+    if (curPage < pageNum) return;
+    `<button data-goto='${
+      curPage + 1
+    }' class="btn--inline  pagination__btn--next">
+        <span>Page ${curPage + 1}</span>
+        <svg class="search__icon">
+          <use href="${icons}#icon-arrow-right"></use>
+        </svg>
+      </button>
+      <p class="page--current">
+        <span>${curPage}</span>
+      </p>
       <button data-goto='${
         curPage - 1
       }' class="btn--inline  pagination__btn--prev">
-    <svg class="search__icon">
-      <use href="${icons}#icon-arrow-left"></use>
-    </svg>
-    <span>Page ${curPage - 1}</span>
-  </button>`;
+        <svg class="search__icon">
+          <use href="${icons}#icon-arrow-left"></use>
+        </svg>
+        <span>Page ${curPage - 1}</span>
+      </button>`;
+
+    //when on last page
+    if (curPage === pageNum && pageNum > 1) return;
+    `<p class="page--current">
+        <span>${curPage}</span>
+      </p>
+      <button data-goto='${
+        curPage - 1
+      }' class="btn--inline  pagination__btn--prev">
+        <svg class="search__icon">
+          <use href="${icons}#icon-arrow-left"></use>
+        </svg>
+        <span>Page ${curPage - 1}</span>
+      </button>`;
     //when there's only one page
     return "";
   }
